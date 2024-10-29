@@ -18,10 +18,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 val LeftPaddingModifier = Modifier.padding(start = 16.dp)
+val StartAndEndPadding8Modifier = Modifier.padding(start = 8.dp, end = 8.dp)
+val StartAndEndPadding16Modifier = Modifier.padding(start = 16.dp, end = 16.dp)
 
 val BottomPaddingModifier = Modifier.padding(bottom = 8.dp)
 
-val CommonPaddingModifier = Modifier.padding(16.dp)
+val CommonPaddingModifier = Modifier.padding(24.dp)
 
 val CenterModifier = Modifier
     .fillMaxWidth()
@@ -29,7 +31,7 @@ val CenterModifier = Modifier
     .padding(24.dp)
 
 val TitleStyle = TextStyle (
-    fontSize = 24.sp,
+    fontSize = 20.sp,
     fontWeight = FontWeight.Bold,
     letterSpacing = 0.8.sp,
     color = Color.Black,
@@ -40,12 +42,12 @@ val OverlineTextStyle = TextStyle (
     color = Color.LightGray,
     fontSize = 14.sp,
     fontWeight = FontWeight.W700,
-    letterSpacing = 0.6.sp,
+    letterSpacing = 0.8.sp,
 )
 
 val BodyTextStyle = TextStyle (
-    fontSize = 16.sp,
-    letterSpacing = 0.4.sp,
+    fontSize = 18.sp,
+    letterSpacing = 0.6.sp,
     color = Color.LightGray
 )
 
@@ -56,4 +58,3 @@ val CommonBackgroundColor = Modifier
 val TitleBackgroundModifier = Modifier
     .fillMaxWidth()
     .background(Color.Yellow)
-    .padding(vertical = 24.dp)

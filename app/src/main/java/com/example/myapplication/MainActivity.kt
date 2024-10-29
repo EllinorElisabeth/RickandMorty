@@ -8,15 +8,20 @@ import androidx.activity.viewModels
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.myapplication.navigation.AppNavigation
+import com.example.myapplication.navigation.BottomNavigation
+import com.example.myapplication.navigation.TopBar
 
 
 import com.example.myapplication.screens.CharacterViewModel
 import com.example.myapplication.ui.theme.MyApplicationTheme
+
+
 
 class MainActivity : ComponentActivity() {
 
@@ -27,9 +32,15 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MyApplicationTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Column(modifier = Modifier.padding(innerPadding)){
-                        AppNavigation(viewModel = characterViewModel)
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
+                    Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                        Column(modifier = Modifier.padding(innerPadding)) {
+                            TopBar()
+                            BottomNavigation(viewModel = characterViewModel)
+                        }
                     }
                 }
             }
@@ -43,9 +54,9 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Preview() {
     MyApplicationTheme {
-
-        val mockViewModel = CharacterViewModel().apply {}
-        AppNavigation(viewModel = mockViewModel)
+        //val mockViewModel = CharacterViewModel()
+        //AppBottomNavigation(viewModel = mockViewModel)
+        TopBar()
     }
 }
 
